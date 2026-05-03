@@ -4,12 +4,12 @@
 Java CLI-Anwendung zur Verwaltung von Aufgaben.
 
 ## Team
-- [Dein Name] (Product Owner)
-- [Name] (Scrum Master)
-- [Name] (Developer)
+- [Milana] (Product Owner)
+- [Dilara] (Scrum Master)
+- [Fromm, Öszoy] (Developer)
 
 ## Beschreibung
-Der Task-Tracker ermöglicht das Erstellen, Anzeigen, Bearbeiten und Löschen von Aufgaben. 
+Der Task-Tracker ermöglicht das Erstellen, Anzeigen, Bearbeiten, Filtern und Löschen von Aufgaben. 
 Er hilft dabei, To-Dos übersichtlich zu verwalten.
 
 ## Technologien
