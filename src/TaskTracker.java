@@ -3,14 +3,14 @@ import java.util.Scanner;
 
 public class TaskTracker {
 
-    static ArrayList<String> tasks = new ArrayList<>();
-    static ArrayList<String> status = new ArrayList<>();
-    static Scanner scanner = new Scanner(System.in);
+    static ArrayList<String> tasks = new ArrayList<>(); // speichert die aufgaben
+    static ArrayList<String> status = new ArrayList<>(); // speichert den Status 
+    static Scanner scanner = new Scanner(System.in); // liest Eingabe vom Benutzer 
 
     public static void main(String[] args) {
 
         while (true) {
-            System.out.println("\n--- Task Tracker ---");
+            System.out.println("\n--- Task Tracker ---");  //Menü anzeige für Benutzer
             System.out.println("1. Task hinzufügen");
             System.out.println("2. Tasks anzeigen");
             System.out.println("3. Task löschen");
@@ -18,9 +18,9 @@ public class TaskTracker {
             System.out.println("5. Beenden");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // wichtig!
+            scanner.nextLine(); // wichtig! entfernt enter taste aus dem speicher 
 
-            switch (choice) {
+            switch (choice) {  // entscheidet was passiert 
                 case 1:
                     addTask();
                     break;
@@ -34,7 +34,7 @@ public class TaskTracker {
                     changeStatus();
                     break;
                 case 5:
-                    System.out.println("Programm beendet.");
+                    System.out.println("Programm beendet."); // stoppt 
                     return;
                 default:
                     System.out.println("Ungültige Eingabe.");
@@ -42,7 +42,7 @@ public class TaskTracker {
         }
     }
 
-    static void addTask() {
+    static void addTask() { // benutzer gibt task ein, task wird gespeichert und status ist automatisch offen
         System.out.println("Task eingeben:");
         String task = scanner.nextLine();
         tasks.add(task);
@@ -50,7 +50,7 @@ public class TaskTracker {
         System.out.println("Task hinzugefügt!");
     }
 
-    static void showTasks() {
+    static void showTasks() { // zeigt alle Tasks
         System.out.println("\nAlle Tasks:");
         if (tasks.isEmpty()) {
             System.out.println("Keine Tasks vorhanden.");
@@ -61,12 +61,12 @@ public class TaskTracker {
         }
     }
 
-    static void deleteTask() {
-        showTasks();
+    static void deleteTask() { 
+        showTasks(); // tasks werde angezeigt
         System.out.println("Nummer des Tasks zum Löschen:");
         int index = scanner.nextInt() - 1;
 
-        if (index >= 0 && index < tasks.size()) {
+        if (index >= 0 && index < tasks.size()) { // benutzer wählt nummer und task wird gelöscht 
             tasks.remove(index);
             status.remove(index);
             System.out.println("Task gelöscht.");
@@ -76,9 +76,9 @@ public class TaskTracker {
     }
 
     static void changeStatus() {
-        showTasks();
+        showTasks(); // wählt task , gibt neuen stauts ein wird geändert
         System.out.println("Nummer des Tasks:");
-        int index = scanner.nextInt() - 1;
+        int index = scanner.nextInt() - 1; 
         scanner.nextLine();
 
         if (index >= 0 && index < tasks.size()) {
